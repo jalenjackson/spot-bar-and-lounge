@@ -2,7 +2,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "rm -rf ./dist && webpack --config webpack.config.dist.js -p",
-    "postinstall": "npm run build"
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
