@@ -1,0 +1,409 @@
+@import "~normalize.css/normalize.css";
+
+html {
+  box-sizing: border-box;
+
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#root,
+.wrapper {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    font-family: "Cerebri Sans", Avenir, Helvetica, Segoe UI, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.animated-page-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 62px;
+    width: 100%;
+    padding: 0 3rem;
+    z-index: 999;
+    a {
+        margin-right: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        &.active {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.page {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    padding: calc(62px + 3rem) 3rem 3rem 3rem;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        padding: 0 0 6rem 0;
+        margin: 0;
+        li {
+            display: flex;
+            width: calc(100% / 4 - 2rem);
+            min-height: 200px;
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            div {
+                display: flex;
+                flex: 1;
+                border: 1px solid black;
+            }
+            a {
+                display: flex;
+                flex: 1;
+                flex-flow: column;
+                padding: 4rem;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+    &.home {
+    	h1 {
+    		max-width: 30ch;
+            margin-top: 0;
+    	}
+        a {
+            color: black;
+            text-decoration: none;
+            &:hover {
+                text-decoration: line-through;
+            }
+        }
+    }
+    &.projects {
+        flex-flow: row wrap;
+        h1 {
+            margin: 0 0 62px 0;
+        }
+        ul {
+            flex-flow: row wrap;
+        }
+    }
+    &.project-item {
+        h1 {
+            max-width: 35ch;
+        }
+        p {
+            max-width: 75ch;
+        }
+        .goBack {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+    &.missed {
+    	align-items: center;
+    	align-content: center;
+    	justify-content: center;
+    	background: url("rdit.gif") no-repeat;
+    	background-size: cover;
+    	background-position: center center;
+
+    	h1 {
+    		font-size: 20vw;
+    	}
+    }
+}
+
+@media screen and (max-width: 1024px) {
+	* h1 {
+		max-width: 100% !important;
+	}
+    .top-bar {
+        padding: 0 1rem;
+    }
+    .page {
+        padding: calc(62px + 3rem) 1rem 1rem 1rem;
+        ul {
+            li {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1140px) {
+    .page {
+        ul {
+            li {
+                width: calc(100% / 3 - 2rem);
+            }
+        }
+    }
+}
+
+
+.top-bar {
+}
+
+.top-bar a {
+    color:black;
+}
+
+
+.first-side {
+    background: #edc7b8;
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top:50px;
+    left:0;
+    transition: all 400ms ease-in-out;
+    cursor: pointer;
+}
+
+.first-side:hover {
+    width: 65%;
+    font-style: italic;
+
+}
+.first-side:hover h1 {
+}
+
+.first-side h1 {
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 3px;
+    font-weight: 900;
+    font-size:60px;
+    color:white;
+    text-align: center;
+    transform:translateY(230px);
+    z-index: 99;
+    transition: all 300ms ease-in-out;
+
+
+}
+
+.first-side h1 span {
+    background: rgba(237,199,184,0.5);
+}
+
+.first-side img {
+    height: 700px;
+    width: 500px;
+    position: absolute;
+    bottom: 50px;
+    left: 20%;
+}
+
+.top-side {
+    position: absolute;
+    top:60px;
+    left: 60%;
+    background: linear-gradient(rgba(0,0,0,0.2), black), url(https://static1.squarespace.com/static/580399a19de4bb01bc0116be/t/58d5a7bed482e99539fdff31/1490397179871/Bar-Seating-Lounge-G-Bar-Giumarellos-Haddon-Township-New-Jersey.jpg) center center no-repeat;
+    background-size: cover;
+    width:40%;
+    height: 60%;
+    transition: all 300ms ease-in-out;
+
+}
+
+.bottom-side {
+    position: absolute;
+    top:55%;
+    left :60%;
+    height: 50%;
+    width: 40%;
+    background: linear-gradient(rgba(0,0,0,0.2),black), url(http://reckittbenckiser.calcmenuweb.com/picOriginal/P121914151208_0.jpg) center center no-repeat;
+    background-size: cover;
+
+}
+
+.logo {
+    width: 120px;
+    height: 70px;
+    position: absolute;
+    left: 5px;
+    top:-5px;
+
+}
+
+.top-bar nav {
+    margin-left: 70px;
+}
+
+.top-side h1 {
+    text-align: center;
+    font-family:Questrial, sans-serif;
+    letter-spacing:3px;
+    font-weight: 900;
+    transform: translateY(70px);
+}
+
+
+
+.top-side:hover h1 {
+    font-style: italic;
+}
+
+.top-side button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 2em;
+    background:none;
+    font-size:14px;
+    color:white;
+    width: 250px;
+    height: 54px;
+    font-family:Questrial, sans-serif;
+    letter-spacing: 3px;
+    border: 1px solid white;
+    transform: translateY(100px);
+    cursor: pointer;
+    transition : all 300ms ease-in-out;
+
+}
+
+.top-side button:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+
+
+.bottom-side:hover h1 {
+    font-style: italic;
+}
+
+.bottom-side button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 2em;
+    background:none;
+    font-size:14px;
+    color:white;
+    width: 250px;
+    height: 54px;
+    font-family:Questrial, sans-serif;
+    letter-spacing: 3px;
+    border: 1px solid white;
+    transform: translateY(100px);
+    cursor: pointer;
+    transition : all 300ms ease-in-out;
+
+}
+
+.bottom-side button:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+.bottom-side h1 {
+    text-align: center !important;
+    font-family:Questrial, sans-serif;
+    letter-spacing:3px;
+    font-weight: 900;
+    margin-left:10px;
+    font-size:30px;
+    transform: translateY(70px);
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        background-color: lightblue;
+    }
+    .top-bar {
+        background:Red !important;
+    }
+}
+
+.top-bar {
+    background: white;
+}
+
+
+
+.menu-container {
+
+    overflow-y: scroll;
+    img {
+        width: 700px;
+        height: 150%;
+        display: block;
+        margin: 0 auto;
+        margin-top:100px;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+        background: none;
+        border-radius: .6em;
+        border: 1px solid black;
+        cursor: pointer;
+        width:250px;
+        margin-top:20px;
+        height: 50px;
+        font-family:Questrial, sans-serif;
+        letter-spacing:3px;
+        transition: all 300ms ease-in-out;
+    }
+
+    button:hover {
+        background:black;
+        color:white;
+    }
+}
+
+.location-container {
+    margin-top:60px;
+    color:black;
+    text-align: center;
+}
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top:20px;
+}
