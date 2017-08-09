@@ -196,7 +196,8 @@ main {
 
 
 .first-side {
-    background: #edc7b8;
+    background: url(https://ih1.redbubble.net/image.13732441.5820/flat,1000x1000,075,f.jpg) center center no-repeat;
+    background-size: cover;
     width: 60%;
     height: 100%;
     position: absolute;
@@ -207,11 +208,10 @@ main {
 }
 
 .first-side:hover {
-    width: 65%;
-    font-style: italic;
 
 }
 .first-side:hover h1 {
+    font-style: italic;
 }
 
 .first-side h1 {
@@ -229,7 +229,6 @@ main {
 }
 
 .first-side h1 span {
-    background: rgba(237,199,184,0.5);
 }
 
 .first-side img {

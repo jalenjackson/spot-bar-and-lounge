@@ -5,7 +5,6 @@ export default class Home extends Component {
 		return (
 			<div className="page home">
 				<div className="first-side">
-					<img src="http://www.pngall.com/wp-content/uploads/2016/05/Champagne-Free-Download-PNG.png"/>
 					<h1><span>Spot Bar & Lounge</span></h1>
 
 				</div>
